@@ -1786,6 +1786,11 @@ public class WifiServiceImpl extends IWifiManager.Stub {
         return mWifiStateMachine.getEnableAutoJoinWhenAssociated();
     }
 
+    public void stopWifiDriver() {
+        enforceAccessPermission();
+        mWifiStateMachine.setDriverStart(false);
+    }
+
     /* Return the Wifi Connection statistics object */
     public WifiConnectionStatistics getConnectionStatistics() {
         enforceAccessPermission();
